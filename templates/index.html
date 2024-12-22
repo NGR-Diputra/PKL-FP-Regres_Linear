@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Luas Lahan</title>
+</head>
+<body>
+    <h1>Prediksi Luas Lahan yang Terserang Hama</h1>
+    <form action="/predict" method="POST">
+        <label for="crop_type">Pilih Jenis Tanaman:</label>
+        <select name="crop_type" id="crop_type">
+            <option value="ubi jalar">Ubi Jalar</option>
+            <option value="padi">Padi</option>
+            <option value="jagung">Jagung</option>
+            <option value="kedelai">Kedelai</option>
+            <option value="kacang tanah">Kacang Tanah</option>
+            <option value="singkong">Singkong</option>
+            <option value="gandum">Gandum</option>
+        </select>
+        <button type="submit">Prediksi</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediksi:</h2>
+        <p>Tanaman: {{ crop_type }}</p>
+        <p>Luas Lahan yang Diprediksi: {{ prediction }} hektar</p>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
