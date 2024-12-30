@@ -13,5 +13,3 @@ Proyek ini merupakan bagian tugas akhir mata kuliah Pengantar Soft Computing, pr
 * **app.py:** Program backend flask untuk laman web.
 * **main.py:** Tempat menyimpan functions pengolahan data untuk di eksekusi di app.py.
 * **main_T.ipynb:** Notebook Jupyter untuk analisis data, pembentukan function regresi linear melalui beberapa pendekatan.
-
-   git clone [https://github.com/your_username/your_repo.git](https://github.com/your_username/your_repo.git)
