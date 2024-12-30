@@ -1,6 +1,6 @@
-# Proyek Akhir PKL
+# Proyek Akhir Pengantar Soft Computing
 
-**Deskripsi Singkat**
+**Deskripsi**
 
 Proyek ini merupakan bagian tugas akhir mata kuliah Pengantar Soft Computing, prodi Informatika, Universitas Udayana, Ganjil 2024. Project membahas terkait kasus serangan hama di provinsi selama kurun waktu beberapa tahun di Indonesia. Project menggunakan pendekatan model regresi linear dalam penyelesaiannya dan disusun khususnya dalam bahasa pemrograman python. Terdapat juga laman web sederhana yang merupakan implementasi hasil dari model regresi linear jika digunakan untuk prediksi nantinya. 
 
