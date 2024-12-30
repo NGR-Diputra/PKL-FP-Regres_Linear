@@ -3,116 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediksi Luas Lahan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        select, button {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .result, .error {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .result {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .error {
-            background-color: #ffebee;
-            color: #c62828;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Prediksi Tanaman</title>
 </head>
 <body>
-    <header>
-        <h1>Prediksi Luas Lahan yang Terserang Hama</h1>
-    </header>
-    <main>
-        <form action="/predict" method="POST">
-            <label for="crop_type">Pilih Jenis Tanaman:</label>
-            <select name="crop_type" id="crop_type" required>
-                <option value="ubi jalar">Ubi Jalar</option>
+    <div class="container">
+        <h1>Prediksi Produksi Tanaman</h1>
+        <form action="/" method="post">
+            <label for="crop">Pilih Jenis Tanaman:</label>
+            <select name="crop_type" id="crop" required>
                 <option value="padi">Padi</option>
                 <option value="jagung">Jagung</option>
                 <option value="kedelai">Kedelai</option>
                 <option value="kacang tanah">Kacang Tanah</option>
                 <option value="kacang hijau">Kacang Hijau</option>
                 <option value="ubi kayu">Ubi Kayu</option>
+                <option value="ubi jalar">Ubi Jalar</option>
             </select>
             <button type="submit">Prediksi</button>
         </form>
-
-        {% if prediction %}
-        <div class="result">
-            <h2>Hasil Prediksi:</h2>
-            <p><strong>Tanaman:</strong> {{ crop_type }}</p>
-            <p><strong>Luas Lahan yang Diprediksi:</strong> {{ prediction }} hektar</p>
-        </div>
-        {% endif %}
-
-        {% if error %}
-        <div class="error">
-            <h2>Error:</h2>
-            <p>{{ error }}</p>
-        </div>
-        {% endif %}
-    </main>
+    </div>
 </body>
 </html>
+

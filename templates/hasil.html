@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Hasil Prediksi</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hasil Prediksi</h1>
+        <h2>Tanaman: {{ crop_type }}</h2>
+        <h3>Prediksi Tahun Mendatang</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tahun</th>
+                    <th>Prediksi Total Lahan Terkena Serangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ future_year }}</td>
+                    <td>{{ prediction }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/" class="button">Kembali</a>
+    </div>
+</body>
+</html>
