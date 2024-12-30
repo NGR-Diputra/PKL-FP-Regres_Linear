@@ -24,15 +24,19 @@ def preprocess_data(dataset_path, sheet_name):
     return data_T.astype(float)
 
 def gaussian_elimination(A, b):
+    # Ubah Matriks Ke Eselon Baris
     n = len(b)
     for i in range(n):
         for j in range(i+1, n):
             ratio = A[j, i] / A[i, i]
             A[j, i:] -= ratio * A[i, i:]
             b[j] -= ratio * b[i]
+
+    # Substitusi Mundur Dari Baris Terakhir        
     x = np.zeros(n)
     for i in range(n-1, -1, -1):
         x[i] = (b[i] - np.dot(A[i, i+1:], x[i+1:])) / A[i, i]
+        
     return x
 
 def predict_next_year(dataset_path, sheet_name):
